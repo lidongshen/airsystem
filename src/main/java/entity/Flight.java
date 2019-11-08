@@ -2,54 +2,36 @@ package entity;
 
 import java.util.Date;
 
-import util.DateUtil;
-
 public class Flight {
 	private int fId;
-	private int fSeatnum;
 	private String fName;
 	private String fFromcity;
 	private String fTocity;
 	private double fMoney;
+	private int fSeatnum;
 	private Date fStartdate;
 	private Date fEnddate;
-	public Flight(int fId,  String fName, String fFromcity, String fTocity, double fMoney, int fSeatnum,Date fStartdate,
+	public Flight(int fId, String fName, String fFromcity, String fTocity, double fMoney, int fSeatnum, Date fStartdate,
 			Date fEnddate) {
 		super();
 		this.fId = fId;
-		this.fSeatnum = fSeatnum;
 		this.fName = fName;
 		this.fFromcity = fFromcity;
 		this.fTocity = fTocity;
 		this.fMoney = fMoney;
+		this.fSeatnum = fSeatnum;
 		this.fStartdate = fStartdate;
 		this.fEnddate = fEnddate;
-	}
-	public Flight(String fName, String fFromcity, String fTocity, double fMoney,int fSeatnum,  Date fStartdate,
-			Date fEnddate) {
-		super();
-		this.fSeatnum = fSeatnum;
-		this.fName = fName;
-		this.fFromcity = fFromcity;
-		this.fTocity = fTocity;
-		this.fMoney = fMoney;
-		this.fStartdate =  fStartdate;
-		this.fEnddate =fEnddate;
 	}
 	public Flight() {
 		super();
 	}
+	
 	public int getfId() {
 		return fId;
 	}
 	public void setfId(int fId) {
 		this.fId = fId;
-	}
-	public int getfSeatnum() {
-		return fSeatnum;
-	}
-	public void setfSeatnum(int fSeatnum) {
-		this.fSeatnum = fSeatnum;
 	}
 	public String getfName() {
 		return fName;
@@ -75,6 +57,12 @@ public class Flight {
 	public void setfMoney(double fMoney) {
 		this.fMoney = fMoney;
 	}
+	public int getFSeatnum() {
+		return fSeatnum;
+	}
+	public void setFSeatnum(int fSeatnum) {
+		this.fSeatnum = fSeatnum;
+	}
 	public Date getfStartdate() {
 		return fStartdate;
 	}
@@ -98,9 +86,9 @@ public class Flight {
 		temp = Double.doubleToLongBits(fMoney);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((fName == null) ? 0 : fName.hashCode());
-		result = prime * result + fSeatnum;
 		result = prime * result + ((fStartdate == null) ? 0 : fStartdate.hashCode());
 		result = prime * result + ((fTocity == null) ? 0 : fTocity.hashCode());
+		result = prime * result + fSeatnum;
 		return result;
 	}
 	@Override
@@ -131,8 +119,6 @@ public class Flight {
 				return false;
 		} else if (!fName.equals(other.fName))
 			return false;
-		if (fSeatnum != other.fSeatnum)
-			return false;
 		if (fStartdate == null) {
 			if (other.fStartdate != null)
 				return false;
@@ -143,16 +129,16 @@ public class Flight {
 				return false;
 		} else if (!fTocity.equals(other.fTocity))
 			return false;
+		if (fSeatnum != other.fSeatnum)
+			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Flight [fId=" + fId + ", fSeatnum=" + fSeatnum + ", fName=" + fName + ", fFromcity=" + fFromcity
-				+ ", fTocity=" + fTocity + ", fMoney=" + fMoney + ", fStartdate=" + fStartdate + ", fEnddate="
+		return "Flight [fId=" + fId + ", fName=" + fName + ", fFromcity=" + fFromcity + ", fTocity=" + fTocity
+				+ ", fMoney=" + fMoney + ", fseatnum=" + fSeatnum + ", fStartdate=" + fStartdate + ", fEnddate="
 				+ fEnddate + "]";
 	}
-	
-	
 	
 	
 }

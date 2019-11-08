@@ -32,12 +32,12 @@ public class FlightDaoImpl implements IFlightDao{
 
 	@Override
 	public void insertFlight(Flight flight) {
-		jt.update("insert into flight(f_name,f_fromcity,f_tocity,f_money,f_seatnum,f_startdate,f_enddate) values(?,?,?,?,?,?,?)",new Object[] {flight.getfName(),flight.getfFromcity(),flight.getfTocity(),flight.getfMoney(),flight.getfSeatnum(),flight.getfStartdate(),flight.getfEnddate()});
+		jt.update("insert into flight(f_name,f_fromcity,f_tocity,f_money,f_seatnum,f_startdate,f_enddate) values(?,?,?,?,?,?,?)",new Object[] {flight.getfName(),flight.getfFromcity(),flight.getfTocity(),flight.getfMoney(),flight.getFSeatnum(),flight.getfStartdate(),flight.getfEnddate()});
 	}
 
 	@Override
 	public void upDateFlight(Flight flight) {
-		jt.update("update flight set f_name=?,f_fromcity=?,f_tocity=?,f_money=?,f_seatnum=?,f_startdate=?,f_enddate=? where f_id=?",new Object[] {flight.getfName(),flight.getfFromcity(),flight.getfTocity(),flight.getfMoney(),flight.getfSeatnum(),flight.getfStartdate(),flight.getfEnddate(),flight.getfId()});
+		jt.update("update flight set f_name=?,f_fromcity=?,f_tocity=?,f_money=?,f_seatnum=?,f_startdate=?,f_enddate=? where f_id=?",new Object[] {flight.getfName(),flight.getfFromcity(),flight.getfTocity(),flight.getfMoney(),flight.getFSeatnum(),flight.getfStartdate(),flight.getfEnddate(),flight.getfId()});
 	}
 
 	@Override

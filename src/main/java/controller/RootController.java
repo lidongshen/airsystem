@@ -16,6 +16,7 @@ import entity.Flight;
 import service.prototype.IFlightService;
 
 @Controller
+
 public class RootController {
 	@Autowired
 	private IFlightService fs;
