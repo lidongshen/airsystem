@@ -7,11 +7,11 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import dao.prototype.ClerkerDao;
+import dao.prototype.IClerkerDao;
 
 import entity.Flight;
 @Repository("ClerkerDaoJdbcImpl")
-public class ClerkerDaoJdbcImpl  implements ClerkerDao{
+public class ClerkerDaoJdbcImpl  implements IClerkerDao{
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

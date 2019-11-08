@@ -10,7 +10,7 @@
 	<script src="/airsys/assets/jquery-validation/lib/jquery.js"></script>
 	<script src="/airsys/assets/jquery-validation/dist/jquery.validate.min.js"></script>
 	<script src="/airsys/assets/jquery-validation/dist/localization/messages_zh.js"></script>
-
+	
 	<style>
 		a{
 			text-decoration: none;
@@ -19,7 +19,7 @@
 
 </head>
 <body>
-	<h3 align="center">航班信息</h3>
+	<h3 align="center">航班详情</h3>
 	<hr color="red">
 	<center>
 		<table  border="1px" cellspacing="0" cellpadding="0">
@@ -28,30 +28,31 @@
 				<th>航班名字</th>
 				<th>起始地</th>
 				<th>目的地</th>
+				<th>票价<th>
+				<!-- <th>总座位数</th> -->
 				<th>出发时间</th>
 				<th>抵达时间</th>
 				<th>操作</th>
 			</tr>
 			
-			<c:forEach items="${f}" var="f">
 				<tr>
-					<td>${f.fId}</td>
-					<td>${f.fName}</td>
-					<td>${f.fFromcity}</td>
-					<td>${f.fTocity}</td>
-					<td>${f.fStartdate}</td>
-					<td>${f.fEnddate}</td>
+					<td>${oneFlight.fId}</td>
+					<td>${oneFlight.fName}</td>
+					<td>${oneFlight.fFromcity}</td>
+					<td>${oneFlight.fTocity}</td>
+					<td>${oneFlight.fMoney}</td>
+					<%-- <td>${oneFlight.fseatnum}</td> --%>
+					<td>${oneFlight.fStartdate}</td>
+					<td>${oneFlight.fEnddate}</td>
 					<td>
-						<a href="#" onclick=userLookFlight(${f.fId})>查看详情</a>
+						<a href="#" onclick=orderTicket(${oneFlight.fId})>订票</a>
 					</td>
 				</tr>
-			</c:forEach>
-			
 			
 		</table>
 		
 	</center>
-	<script type="text/javascript" src = "/airsys/assets/js/userLookFlight.js"></script>
+
 </body>
 
 </html>

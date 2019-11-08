@@ -9,14 +9,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import config.TestConfig;
-import dao.prototype.ClerkerDao;
+import dao.prototype.IClerkerDao;
 import entity.Flight;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=(TestConfig.class))
 public class TestClerkerDao {
 	@Autowired
-	private ClerkerDao clerkerdao;
+	private IClerkerDao clerkerdao;
 	
 	@Test
 	public void testFindAll(){

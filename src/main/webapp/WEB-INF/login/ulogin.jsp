@@ -14,7 +14,7 @@
 	 <link rel="stylesheet" href="/airsys/assets/css/ulogin.css">
 </head>
 <body>
-    <form action="#" method="POST" class="zong" >
+    <form action="logins" method="POST" class="zong" >
         <p class="p1" style="width:100%;height:32px;font-weight: 600;font-size: 22px;margin:15px 0 10px;">用户登录</p>
         <div class="form-group">
             <label for="uname">用户名</label>
