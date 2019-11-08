@@ -28,7 +28,7 @@ public class UserController {
 	
 	@RequestMapping("/login")
 	public ModelAndView login() {
-		ModelAndView mv = new ModelAndView("user/login");
+		ModelAndView mv = new ModelAndView("login/ulogin");
 		return mv;
 	}
 	@RequestMapping("/logins")
