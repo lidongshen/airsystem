@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Repository;
 
 import dao.prototype.IUserDao;
 import entity.Flight;
+import entity.Trip;
 import entity.User;
 
 @Repository("userDaoSpringImpl")
@@ -16,6 +18,7 @@ public class UserDaoSpringImpl implements IUserDao{
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	
 	
 	@Override
 	public List<Flight> order(int uId,String from, String to) {
@@ -35,22 +38,44 @@ public class UserDaoSpringImpl implements IUserDao{
 	}
 
 	@Override
-	public void pay(int uId) {
+	public void Pay(int uId, int fId) {
+		jdbcTemplate.update(
+				"update booking set b_count=b_count+1 where u_id=? and f_id=?",
+				new Object[]{uId,fId});
+		jdbcTemplate.update(
+				"update table trip set u_ispay=1 where u_id=? and f_id=?",
+				new Object[]{uId,fId});
+	}
+	
+	@Override
+	public boolean isPay(int uId,int fId) {
+		boolean flag = false;
+		Trip list = jdbcTemplate.queryForObject(
+				"select * from trip where u_id=? and f_id=?", 
+				new Object[] {uId,fId},
+				new BeanPropertyRowMapper<Trip>(Trip.class));
+		int trip = list.getuIspay();
+		if(list.getuIspay()==1) {
+			flag=true;
+		}
+		return flag;
+	}
+
+	@Override
+	//出票
+	public void drawer(int uId,int fId) {
 		
 	}
 
 	@Override
-	public void drawer(int uId) {
+	//退款
+	public void refund(int uId,int fId) {
 		
 	}
 
 	@Override
-	public void refund(int uId) {
-		
-	}
-
-	@Override
-	public void endorse(int uId) {
+	//改签
+	public void endorse(int uId,int fId,String from,String to) {
 		
 	}
 
@@ -66,5 +91,7 @@ public class UserDaoSpringImpl implements IUserDao{
 		}
 		return flag;
 	}
+
+	
 
 }

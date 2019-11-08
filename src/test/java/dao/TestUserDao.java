@@ -32,4 +32,9 @@ public class TestUserDao {
 		boolean flag = userDao.isLogin("123", "zss");
 		System.out.println(flag);
 	}
+	@Test
+	public void testIsPay() {
+		boolean flag = userDao.isPay(1, 1);
+		System.out.println(flag);
+	}
 }

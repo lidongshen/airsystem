@@ -22,5 +22,9 @@ public class UserServiceDaoImpl implements IUserService{
 	public boolean isLogin(String username, String password) {
 		return userDao.isLogin(username, password);
 	}
+	@Override
+	public List<Flight> findTicket(String from, String to) {
+		return userDao.findTicket(from, to);
+	}
 
 }

@@ -11,7 +11,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>login</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="/airsys/assets/css/bootstrap.css">
+    <script src="/airsys/assets/jquery-validation/lib/jquery.js"></script>
+	<script src="/airsys/assets/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="/airsys/assets/jquery-validation/dist/localization/messages_zh.js"></script>
+    
     <style>
        .one{
            width:1000px;
@@ -25,7 +29,7 @@
 </head>
 <body>
     <div class="one">
-        <form method="post" id="form1" action="find">
+        <form method="post" id="form1" action="search" >
             <fieldset>
                 <legend class="chaxun">查询</legend>
                 <p>

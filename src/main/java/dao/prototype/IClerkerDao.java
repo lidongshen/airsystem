@@ -1,3 +1,4 @@
+
 package dao.prototype;
 
 import java.util.List;
@@ -15,3 +16,4 @@ public interface IClerkerDao {
 		void endorse(int uid);
 		void pay(int uid);	
 }
+

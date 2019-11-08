@@ -12,20 +12,22 @@ public interface IUserDao {
 	//查询订单
 	List<Flight> order(int uId,String from,String to);
 	
-	//查余票
+	//查票
 	List<Flight> findTicket(String from,String to);
 	
 	//出票
-	void drawer(int uId);
+	void drawer(int uId,int fId);
 	
 	//退款
-	void refund(int uId);
+	void refund(int uId,int fId);
 	
 	//改签
-	void endorse(int uId);
+	void endorse(int uId,int fId,String from,String to);
 	
 	//付账
-	void pay(int uId);
+	void Pay(int uId, int fId);
+	//检查是否付账
+	boolean isPay(int uId,int fId);
 	
 	
 	boolean isLogin(String username,String password);
