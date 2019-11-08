@@ -1,11 +1,12 @@
 package config;
 
+import javax.servlet.ServletContext;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.view.JstlView;
@@ -38,4 +39,6 @@ public class AppConfig extends WebMvcConfigurationSupport{
 		registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
 		super.addResourceHandlers(registry);
 	}
+	
+
 }

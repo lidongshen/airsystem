@@ -39,4 +39,9 @@ public class FlightServiceImpl implements IFlightService{
 		flightDao.upDateFlight(flight);
 	}
 
+	@Override
+	public List<Flight> flightPage(int pageNo, int pageSize) {
+		return flightDao.findFlightPager((pageNo-1)*pageSize, pageSize);
+	}
+
 }

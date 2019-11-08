@@ -9,19 +9,18 @@
 <style>
 	p{
 		font-size:28px;
-		text-align: center;
-		margin: 10px 0;
+		margin: 20px 0 10px;
+		color:blue;
 	}
 	div{
 		width:100%;
-		height:440px;
-		background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571156911360&di=9f816e40e9ab0d1d3df91ac784ee9603&imgtype=0&src=http%3A%2F%2Fimg004.hc360.cn%2Fm2%2FM05%2FDF%2F06%2FwKhQcVQzFWOEAHZxAAAAAC4imUc156.jpg) no-repeat center/100% 100%;
+		height:100%;
+		background: url(/airsys/assets/image/welcome.jpg) no-repeat center/100% 100%;
 	}
 </style>
 </head>
 <body>
-	<p>欢迎登录本系统,本系统正在试运行阶段，如有bug，请截图提交至邮箱，帮助我们改进</p>
-	<p>1397153533@qq.com</p>	
+	<p>欢迎使用航空航天售票系统</p>
 	<div></div>
 </body>
 </html>

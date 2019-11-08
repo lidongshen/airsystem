@@ -39,6 +39,11 @@ public class FlightDaoImpl implements IFlightDao{
 	public void upDateFlight(Flight flight) {
 		jt.update("update flight set f_name=?,f_fromcity=?,f_tocity=?,f_money=?,f_seatnum=?,f_startdate=?,f_enddate=? where f_id=?",new Object[] {flight.getfName(),flight.getfFromcity(),flight.getfTocity(),flight.getfMoney(),flight.getfSeatnum(),flight.getfStartdate(),flight.getfEnddate(),flight.getfId()});
 	}
+
+	@Override
+	public List<Flight> findFlightPager(int offset, int pageSize) {
+		return jt.query("select * from flight limit ?,?",new Object[] {offset,pageSize}, new BeanPropertyRowMapper<Flight>(Flight.class));
+	}
 	
 	
 }

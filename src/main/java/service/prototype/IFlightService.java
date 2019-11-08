@@ -15,4 +15,5 @@ public interface IFlightService {
 	void delFlight(int id);
 	void addFlight(Flight flight);
 	void modify(Flight flight);
+	List<Flight> flightPage(int pageNo,int pageSize);
 }
