@@ -52,7 +52,7 @@
 		</table>
 		
 	</center>
-
+	<script type="text/javascript" src = "/airsys/assets/js/orderTicket.js"></script>
 </body>
 
 </html>

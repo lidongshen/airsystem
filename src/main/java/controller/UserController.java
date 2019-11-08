@@ -66,15 +66,14 @@ public class UserController {
 	@RequestMapping(value="/payTicket/{fId}",produces = "text/plain;charset=utf-8")
 	public ModelAndView payTicket(@PathVariable("fId") int fId) {
 		ModelAndView mv = new ModelAndView("user/pay");
-		Flight flight = flightService.seachFlight(fId);
+		/*Flight flight = flightService.seachFlight(fId);
 		double ticketPrice =flight.getfMoney();
-		mv.addObject("ticketPrice", ticketPrice);
+		mv.addObject("ticketPrice", ticketPrice);*/
 		return mv;
 	}
 	@RequestMapping(value="/orderTicket/{fId}",produces = "text/plain;charset=utf-8")
 	public ModelAndView orderTicket(@PathVariable("fId") int fId,HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("user/orderTicket");
-		int uId;
 		return mv;
 	}
 }
