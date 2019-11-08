@@ -7,11 +7,11 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import dao.prototype.ClerkerDao;
-
+import dao.prototype.IClerkerDao;
 import entity.Flight;
+import entity.User;
 @Repository("ClerkerDaoJdbcImpl")
-public class ClerkerDaoJdbcImpl  implements ClerkerDao{
+public class ClerkerDaoJdbcImpl  implements IClerkerDao{
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -32,9 +32,14 @@ public class ClerkerDaoJdbcImpl  implements ClerkerDao{
 	}
 
 	@Override
-	//用户查询
-	public void findUser(int uid) {
-		
+	//全部用户信息查询
+	public List<User> findUserAll() {
+		return jdbcTemplate.query("select * from user", new BeanPropertyRowMapper<User>(User.class));
+	}
+	@Override
+	//单用户信息查询
+	public List<User> findUser(int uid) {
+		return jdbcTemplate.query("SELECT * FROM user WHERE u_id=?", new Object[] {uid},new BeanPropertyRowMapper<User>(User.class));
 	}
 
 	@Override
