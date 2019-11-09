@@ -1,6 +1,6 @@
 package entity;
 
-import java.sql.Time;
+import java.util.Date;
 
 public class Flight {
 	private int fId;
@@ -9,90 +9,82 @@ public class Flight {
 	private String fTocity;
 	private double fMoney;
 	private int fSeatnum;
-	private Time fStarttime;
-	private Time fEndtime;
-	
+	private Date fStarttime;
+	private Date fEndtime;
+	public Flight(int fId, String fName, String fFromcity, String fTocity, double fMoney, int fSeatnum, Date fStarttime,
+			Date fEndtime) {
+		super();
+		this.fId = fId;
+		this.fName = fName;
+		this.fFromcity = fFromcity;
+		this.fTocity = fTocity;
+		this.fMoney = fMoney;
+		this.fSeatnum = fSeatnum;
+		this.fStarttime = fStarttime;
+		this.fEndtime = fEndtime;
+	}
+	public Flight(String fName, String fFromcity, String fTocity, double fMoney, int fSeatnum, Date fStarttime,
+			Date fEndtime) {
+		super();
+		this.fName = fName;
+		this.fFromcity = fFromcity;
+		this.fTocity = fTocity;
+		this.fMoney = fMoney;
+		this.fSeatnum = fSeatnum;
+		this.fStarttime = fStarttime;
+		this.fEndtime = fEndtime;
+	}
 	public Flight() {
 		super();
 	}
-	
-	public Flight(int fId, String fName, String fFromcity, String fTocity, double fMoney, int fSeatnum, Time fStartdate,
-			Time fEnddate) {
-		super();
-		this.fId = fId;
-		this.fName = fName;
-		this.fFromcity = fFromcity;
-		this.fTocity = fTocity;
-		this.fMoney = fMoney;
-		this.fSeatnum = fSeatnum;
-		this.fStarttime = fStartdate;
-		this.fEndtime = fEnddate;
-	}
-
 	public int getfId() {
 		return fId;
 	}
-
 	public void setfId(int fId) {
 		this.fId = fId;
 	}
-
 	public String getfName() {
 		return fName;
 	}
-
 	public void setfName(String fName) {
 		this.fName = fName;
 	}
-
 	public String getfFromcity() {
 		return fFromcity;
 	}
-
 	public void setfFromcity(String fFromcity) {
 		this.fFromcity = fFromcity;
 	}
-
 	public String getfTocity() {
 		return fTocity;
 	}
-
 	public void setfTocity(String fTocity) {
 		this.fTocity = fTocity;
 	}
-
 	public double getfMoney() {
 		return fMoney;
 	}
-
 	public void setfMoney(double fMoney) {
 		this.fMoney = fMoney;
 	}
-
 	public int getfSeatnum() {
 		return fSeatnum;
 	}
-
 	public void setfSeatnum(int fSeatnum) {
 		this.fSeatnum = fSeatnum;
 	}
-
-	public Time getfStarttime() {
+	public Date getfStarttime() {
 		return fStarttime;
 	}
-
-	public void setfStarttime(Time fStartdate) {
-		this.fStarttime = fStartdate;
+	public void setfStarttime(Date fStarttime) {
+		this.fStarttime = fStarttime;
 	}
-
-	public Time getfEndtime() {
+	public Date getfEndtime() {
 		return fEndtime;
 	}
-
-	public void setfEndtime(Time fEnddate) {
-		this.fEndtime = fEnddate;
+	public void setfEndtime(Date fEndtime) {
+		this.fEndtime = fEndtime;
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -109,7 +101,6 @@ public class Flight {
 		result = prime * result + ((fTocity == null) ? 0 : fTocity.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -152,14 +143,12 @@ public class Flight {
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
 		return "Flight [fId=" + fId + ", fName=" + fName + ", fFromcity=" + fFromcity + ", fTocity=" + fTocity
-				+ ", fMoney=" + fMoney + ", fSeatnum=" + fSeatnum + ", fStartdate=" + fStarttime + ", fEnddate="
+				+ ", fMoney=" + fMoney + ", fSeatnum=" + fSeatnum + ", fStarttime=" + fStarttime + ", fEndtime="
 				+ fEndtime + "]";
 	}
-	
 	
 	
 }

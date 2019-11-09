@@ -12,8 +12,9 @@ import entity.Flight;
 public interface IFlightService {
 	List<Flight> seachFlightAll();
 	Flight seachFlight(int id);
-	void delFlight(int id);
-	void addFlight(Flight flight);
-	void modify(Flight flight);
+	int delFlight(int id);
+	int addFlight(Flight flight);
+	int modify(Flight flight);
 	List<Flight> flightPage(int pageNo,int pageSize);
+	int totalItems();
 }

@@ -21,8 +21,8 @@ public class FlightDaoImpl implements IFlightDao{
 	}
 
 	@Override
-	public void deleteFlight(int id) {
-		jt.update("delete from flight where f_id="+id);
+	public int deleteFlight(int id) {
+		return jt.update("delete from flight where f_id="+id);
 	}
 
 	@Override
@@ -31,18 +31,23 @@ public class FlightDaoImpl implements IFlightDao{
 	}
 
 	@Override
-	public void insertFlight(Flight flight) {
-		jt.update("insert into flight(f_name,f_fromcity,f_tocity,f_money,f_seatnum,f_startdate,f_enddate) values(?,?,?,?,?,?,?)",new Object[] {flight.getfName(),flight.getfFromcity(),flight.getfTocity(),flight.getfMoney(),flight.getfSeatnum(),flight.getfStartdate(),flight.getfEnddate()});
+	public int insertFlight(Flight flight) {
+		return jt.update("insert into flight(f_name,f_fromcity,f_tocity,f_money,f_seatnum,f_startdate,f_enddate) values(?,?,?,?,?,?,?)",new Object[] {flight.getfName(),flight.getfFromcity(),flight.getfTocity(),flight.getfMoney(),flight.getfSeatnum(),flight.getfStarttime(),flight.getfEndtime()});
 	}
 
 	@Override
-	public void upDateFlight(Flight flight) {
-		jt.update("update flight set f_name=?,f_fromcity=?,f_tocity=?,f_money=?,f_seatnum=?,f_startdate=?,f_enddate=? where f_id=?",new Object[] {flight.getfName(),flight.getfFromcity(),flight.getfTocity(),flight.getfMoney(),flight.getfSeatnum(),flight.getfStartdate(),flight.getfEnddate(),flight.getfId()});
+	public int upDateFlight(Flight flight) {
+		return jt.update("update flight set f_name=?,f_fromcity=?,f_tocity=?,f_money=?,f_seatnum=?,f_startdate=?,f_enddate=? where f_id=?",new Object[] {flight.getfName(),flight.getfFromcity(),flight.getfTocity(),flight.getfMoney(),flight.getfSeatnum(),flight.getfStarttime(),flight.getfEndtime(),flight.getfId()});
 	}
 
 	@Override
 	public List<Flight> findFlightPager(int offset, int pageSize) {
 		return jt.query("select * from flight limit ?,?",new Object[] {offset,pageSize}, new BeanPropertyRowMapper<Flight>(Flight.class));
+	}
+
+	@Override
+	public int totalNum() {
+		return jt.queryForObject("select count(*) from flight", Integer.class);
 	}
 	
 	
