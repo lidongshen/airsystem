@@ -9,8 +9,8 @@ public class Flight {
 	private String fTocity;
 	private double fMoney;
 	private int fSeatnum;
-	private Time fStartdate;
-	private Time fEnddate;
+	private Time fStarttime;
+	private Time fEndtime;
 	
 	public Flight() {
 		super();
@@ -25,8 +25,8 @@ public class Flight {
 		this.fTocity = fTocity;
 		this.fMoney = fMoney;
 		this.fSeatnum = fSeatnum;
-		this.fStartdate = fStartdate;
-		this.fEnddate = fEnddate;
+		this.fStarttime = fStartdate;
+		this.fEndtime = fEnddate;
 	}
 
 	public int getfId() {
@@ -77,27 +77,27 @@ public class Flight {
 		this.fSeatnum = fSeatnum;
 	}
 
-	public Time getfStartdate() {
-		return fStartdate;
+	public Time getfStarttime() {
+		return fStarttime;
 	}
 
-	public void setfStartdate(Time fStartdate) {
-		this.fStartdate = fStartdate;
+	public void setfStarttime(Time fStartdate) {
+		this.fStarttime = fStartdate;
 	}
 
-	public Time getfEnddate() {
-		return fEnddate;
+	public Time getfEndtime() {
+		return fEndtime;
 	}
 
-	public void setfEnddate(Time fEnddate) {
-		this.fEnddate = fEnddate;
+	public void setfEndtime(Time fEnddate) {
+		this.fEndtime = fEnddate;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((fEnddate == null) ? 0 : fEnddate.hashCode());
+		result = prime * result + ((fEndtime == null) ? 0 : fEndtime.hashCode());
 		result = prime * result + ((fFromcity == null) ? 0 : fFromcity.hashCode());
 		result = prime * result + fId;
 		long temp;
@@ -105,7 +105,7 @@ public class Flight {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((fName == null) ? 0 : fName.hashCode());
 		result = prime * result + fSeatnum;
-		result = prime * result + ((fStartdate == null) ? 0 : fStartdate.hashCode());
+		result = prime * result + ((fStarttime == null) ? 0 : fStarttime.hashCode());
 		result = prime * result + ((fTocity == null) ? 0 : fTocity.hashCode());
 		return result;
 	}
@@ -119,10 +119,10 @@ public class Flight {
 		if (getClass() != obj.getClass())
 			return false;
 		Flight other = (Flight) obj;
-		if (fEnddate == null) {
-			if (other.fEnddate != null)
+		if (fEndtime == null) {
+			if (other.fEndtime != null)
 				return false;
-		} else if (!fEnddate.equals(other.fEnddate))
+		} else if (!fEndtime.equals(other.fEndtime))
 			return false;
 		if (fFromcity == null) {
 			if (other.fFromcity != null)
@@ -140,10 +140,10 @@ public class Flight {
 			return false;
 		if (fSeatnum != other.fSeatnum)
 			return false;
-		if (fStartdate == null) {
-			if (other.fStartdate != null)
+		if (fStarttime == null) {
+			if (other.fStarttime != null)
 				return false;
-		} else if (!fStartdate.equals(other.fStartdate))
+		} else if (!fStarttime.equals(other.fStarttime))
 			return false;
 		if (fTocity == null) {
 			if (other.fTocity != null)
@@ -156,8 +156,8 @@ public class Flight {
 	@Override
 	public String toString() {
 		return "Flight [fId=" + fId + ", fName=" + fName + ", fFromcity=" + fFromcity + ", fTocity=" + fTocity
-				+ ", fMoney=" + fMoney + ", fSeatnum=" + fSeatnum + ", fStartdate=" + fStartdate + ", fEnddate="
-				+ fEnddate + "]";
+				+ ", fMoney=" + fMoney + ", fSeatnum=" + fSeatnum + ", fStartdate=" + fStarttime + ", fEnddate="
+				+ fEndtime + "]";
 	}
 	
 	

@@ -24,7 +24,7 @@ public class TestUserDao {
 	}
 	@Test
 	public void testFindTicket() {
-		List<Flight> findTicket = userDao.findTicket("太原", "云南");
+		List<Flight> findTicket = userDao.findTicket("太原", "北京");
 		System.out.println(findTicket);
 	}
 	@Test
