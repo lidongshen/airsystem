@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>航空航天售票系统</title>
-    <link rel="stylesheet" href="css/layui/css/layui.css">
+    <link rel="stylesheet" href="/airsys/assets/layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -34,10 +33,10 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">机票查询</a>
+                    <a class="" href="cflightlist" target="ck">机票查询</a>
                 </li>
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">用户查询</a>
+                    <a class="" href="cuserlist" target="ck">用户查询</a>
                 </li>
                 <li class="class layui-nav-item">
                     <a href="../class.ajax/ajax.html" target="ck">售票系统</a>
@@ -52,24 +51,16 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style=" width:100%;height:100%">
-
             <iframe name="ck" class="view"style=" width:100%;height:100%" src="huanying.html"></iframe>
         </div>
     </div>
 
-    <div class="layui-footer">
+      <div class="layui-footer">
         <!-- 底部固定区域 -->
-        © layui.com - 底部固定区域
+        Air and space ticketing system
     </div>
 </div>
-<script src="css/layui/layui.js"></script>
-<script>
-    //JavaScript代码区域
-    layui.use('element', function(){
-        var element = layui.element;
-
-    });
-</script>
+<script src="/airsys/assets/layui/layui.js"></script>
 </body>
 </html>
       
