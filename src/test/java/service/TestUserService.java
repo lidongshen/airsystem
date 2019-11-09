@@ -17,7 +17,7 @@ public class TestUserService {
 	
 	@Test
 	public void testOrder() {
-		System.out.println(userService.order(1, "太原", "北京"));
+		System.out.println(userService.findOrder(1, "太原", "北京"));
 	}
 	@Test
 	public void testLogin() {

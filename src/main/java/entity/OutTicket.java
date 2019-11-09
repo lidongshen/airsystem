@@ -7,46 +7,69 @@ public class OutTicket {
 	private int fId;
 	private int uId;
 	private Date oDate;
-	public OutTicket(int oId, int fId, int uId, Date oDate) {
+	private int oIsout;
+	
+	public OutTicket(int oId, int fId, int uId, Date oDate, int oIsout) {
 		super();
 		this.oId = oId;
 		this.fId = fId;
 		this.uId = uId;
 		this.oDate = oDate;
+		this.oIsout = oIsout;
 	}
-	public OutTicket(int fId, int uId, Date oDate) {
+	
+	public OutTicket(int fId, int uId, Date oDate, int oIsout) {
 		super();
 		this.fId = fId;
 		this.uId = uId;
 		this.oDate = oDate;
+		this.oIsout = oIsout;
 	}
+	
 	public OutTicket() {
 		super();
 	}
+
 	public int getoId() {
 		return oId;
 	}
+
 	public void setoId(int oId) {
 		this.oId = oId;
 	}
+
 	public int getfId() {
 		return fId;
 	}
+
 	public void setfId(int fId) {
 		this.fId = fId;
 	}
+
 	public int getuId() {
 		return uId;
 	}
+
 	public void setuId(int uId) {
 		this.uId = uId;
 	}
+
 	public Date getoDate() {
 		return oDate;
 	}
+
 	public void setoDate(Date oDate) {
 		this.oDate = oDate;
 	}
+
+	public int getoIsout() {
+		return oIsout;
+	}
+
+	public void setoIsout(int oIsout) {
+		this.oIsout = oIsout;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -54,9 +77,11 @@ public class OutTicket {
 		result = prime * result + fId;
 		result = prime * result + ((oDate == null) ? 0 : oDate.hashCode());
 		result = prime * result + oId;
+		result = prime * result + oIsout;
 		result = prime * result + uId;
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -75,14 +100,20 @@ public class OutTicket {
 			return false;
 		if (oId != other.oId)
 			return false;
+		if (oIsout != other.oIsout)
+			return false;
 		if (uId != other.uId)
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
-		return "OutTicket [oId=" + oId + ", fId=" + fId + ", uId=" + uId + ", oDate=" + oDate + "]";
+		return "OutTicket [oId=" + oId + ", fId=" + fId + ", uId=" + uId + ", oDate=" + oDate + ", oIsout=" + oIsout
+				+ "]";
 	}
+	
+	
 	
 	
 }
