@@ -49,14 +49,14 @@ layui.use('table',function() {
 							sort : true,
 						},
 						{
-							field : 'fStartdate',
+							field : 'fStarttime',
 							title : '起飞时间',
 							sort : true,
 							unresize : true,
 							templet : '<div>{{ layui.util.toDateString(d.fStartdate,"HH:mm:ss") }}</div>'
 						},
 						{
-							field : 'fEnddate',
+							field : 'fEndtime',
 							title : '到达时间',
 							sort : true,
 							unresize : true,

@@ -29,8 +29,7 @@ public class TestFlightServiceImpl {
 	
 	@Test
 	public void testSeach() {
-		fs.modify(new Flight(2,"bo","太原","上海",1250,50,DateUtil.toDate("yyyy-MM-dd HH-mm-ss", "2019-11-02 11:54:20"),DateUtil.toDate("yyyy-MM-dd HH-mm-ss", "2019-11-02 13:54:20")));
-		System.out.println(fs.seachFlight(2));
+		System.out.println(fs.seachFlight(1));
 	
 	}
 	

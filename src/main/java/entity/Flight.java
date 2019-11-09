@@ -4,35 +4,35 @@ import java.util.Date;
 
 public class Flight {
 	private int fId;
-	private int fSeatnum;
 	private String fName;
 	private String fFromcity;
 	private String fTocity;
 	private double fMoney;
-	private Date fStartdate;
-	private Date fEnddate;
-	public Flight(int fId,  String fName, String fFromcity, String fTocity, double fMoney, int fSeatnum,Date fStartdate,
-			Date fEnddate) {
+	private int fSeatnum;
+	private Date fStarttime;
+	private Date fEndtime;
+	public Flight(int fId, String fName, String fFromcity, String fTocity, double fMoney, int fSeatnum, Date fStarttime,
+			Date fEndtime) {
 		super();
 		this.fId = fId;
-		this.fSeatnum = fSeatnum;
 		this.fName = fName;
 		this.fFromcity = fFromcity;
 		this.fTocity = fTocity;
 		this.fMoney = fMoney;
-		this.fStartdate = fStartdate;
-		this.fEnddate = fEnddate;
+		this.fSeatnum = fSeatnum;
+		this.fStarttime = fStarttime;
+		this.fEndtime = fEndtime;
 	}
-	public Flight(String fName, String fFromcity, String fTocity, double fMoney,int fSeatnum,  Date fStartdate,
-			Date fEnddate) {
+	public Flight(String fName, String fFromcity, String fTocity, double fMoney, int fSeatnum, Date fStarttime,
+			Date fEndtime) {
 		super();
-		this.fSeatnum = fSeatnum;
 		this.fName = fName;
 		this.fFromcity = fFromcity;
 		this.fTocity = fTocity;
 		this.fMoney = fMoney;
-		this.fStartdate =  fStartdate;
-		this.fEnddate =fEnddate;
+		this.fSeatnum = fSeatnum;
+		this.fStarttime = fStarttime;
+		this.fEndtime = fEndtime;
 	}
 	public Flight() {
 		super();
@@ -42,12 +42,6 @@ public class Flight {
 	}
 	public void setfId(int fId) {
 		this.fId = fId;
-	}
-	public int getfSeatnum() {
-		return fSeatnum;
-	}
-	public void setfSeatnum(int fSeatnum) {
-		this.fSeatnum = fSeatnum;
 	}
 	public String getfName() {
 		return fName;
@@ -73,23 +67,29 @@ public class Flight {
 	public void setfMoney(double fMoney) {
 		this.fMoney = fMoney;
 	}
-	public Date getfStartdate() {
-		return fStartdate;
+	public int getfSeatnum() {
+		return fSeatnum;
 	}
-	public void setfStartdate(Date fStartdate) {
-		this.fStartdate = fStartdate;
+	public void setfSeatnum(int fSeatnum) {
+		this.fSeatnum = fSeatnum;
 	}
-	public Date getfEnddate() {
-		return fEnddate;
+	public Date getfStarttime() {
+		return fStarttime;
 	}
-	public void setfEnddate(Date fEnddate) {
-		this.fEnddate = fEnddate;
+	public void setfStarttime(Date fStarttime) {
+		this.fStarttime = fStarttime;
+	}
+	public Date getfEndtime() {
+		return fEndtime;
+	}
+	public void setfEndtime(Date fEndtime) {
+		this.fEndtime = fEndtime;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((fEnddate == null) ? 0 : fEnddate.hashCode());
+		result = prime * result + ((fEndtime == null) ? 0 : fEndtime.hashCode());
 		result = prime * result + ((fFromcity == null) ? 0 : fFromcity.hashCode());
 		result = prime * result + fId;
 		long temp;
@@ -97,7 +97,7 @@ public class Flight {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((fName == null) ? 0 : fName.hashCode());
 		result = prime * result + fSeatnum;
-		result = prime * result + ((fStartdate == null) ? 0 : fStartdate.hashCode());
+		result = prime * result + ((fStarttime == null) ? 0 : fStarttime.hashCode());
 		result = prime * result + ((fTocity == null) ? 0 : fTocity.hashCode());
 		return result;
 	}
@@ -110,10 +110,10 @@ public class Flight {
 		if (getClass() != obj.getClass())
 			return false;
 		Flight other = (Flight) obj;
-		if (fEnddate == null) {
-			if (other.fEnddate != null)
+		if (fEndtime == null) {
+			if (other.fEndtime != null)
 				return false;
-		} else if (!fEnddate.equals(other.fEnddate))
+		} else if (!fEndtime.equals(other.fEndtime))
 			return false;
 		if (fFromcity == null) {
 			if (other.fFromcity != null)
@@ -131,10 +131,10 @@ public class Flight {
 			return false;
 		if (fSeatnum != other.fSeatnum)
 			return false;
-		if (fStartdate == null) {
-			if (other.fStartdate != null)
+		if (fStarttime == null) {
+			if (other.fStarttime != null)
 				return false;
-		} else if (!fStartdate.equals(other.fStartdate))
+		} else if (!fStarttime.equals(other.fStarttime))
 			return false;
 		if (fTocity == null) {
 			if (other.fTocity != null)
@@ -145,12 +145,10 @@ public class Flight {
 	}
 	@Override
 	public String toString() {
-		return "Flight [fId=" + fId + ", fSeatnum=" + fSeatnum + ", fName=" + fName + ", fFromcity=" + fFromcity
-				+ ", fTocity=" + fTocity + ", fMoney=" + fMoney + ", fStartdate=" + fStartdate + ", fEnddate="
-				+ fEnddate + "]";
+		return "Flight [fId=" + fId + ", fName=" + fName + ", fFromcity=" + fFromcity + ", fTocity=" + fTocity
+				+ ", fMoney=" + fMoney + ", fSeatnum=" + fSeatnum + ", fStarttime=" + fStarttime + ", fEndtime="
+				+ fEndtime + "]";
 	}
-	
-	
 	
 	
 }
