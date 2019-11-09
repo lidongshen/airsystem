@@ -16,9 +16,8 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
  *
  */
 @Configuration
-@ComponentScan({"dao","service","util"})
+@ComponentScan({"dao","service","controller"})
 @Import(DBConfig.class)
 @EnableAspectJAutoProxy
-
 public class TestConfig {
 }

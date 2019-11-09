@@ -25,23 +25,28 @@ public class FlightServiceImpl implements IFlightService{
 	}
 
 	@Override
-	public void delFlight(int id) {
-		flightDao.deleteFlight(id);
+	public int delFlight(int id) {
+		return flightDao.deleteFlight(id);
 	}
 
 	@Override
-	public void addFlight(Flight flight) {
-		flightDao.insertFlight(flight);
+	public int addFlight(Flight flight) {
+		return flightDao.insertFlight(flight);
 	}
 
 	@Override
-	public void modify(Flight flight) {
-		flightDao.upDateFlight(flight);
+	public int modify(Flight flight) {
+		return flightDao.upDateFlight(flight);
 	}
 
 	@Override
 	public List<Flight> flightPage(int pageNo, int pageSize) {
 		return flightDao.findFlightPager((pageNo-1)*pageSize, pageSize);
+	}
+
+	@Override
+	public int totalItems() {
+		return flightDao.totalNum();
 	}
 
 }

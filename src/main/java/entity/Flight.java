@@ -2,8 +2,6 @@ package entity;
 
 import java.util.Date;
 
-import util.DateUtil;
-
 public class Flight {
 	private int fId;
 	private int fSeatnum;

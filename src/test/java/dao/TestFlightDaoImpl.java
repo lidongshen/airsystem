@@ -28,7 +28,7 @@ public class TestFlightDaoImpl {
 	
 	@Test
 	public void delete() {
-		fd.deleteFlight(2);
+		System.out.println(fd.deleteFlight(19));
 	} 
 	
 	
