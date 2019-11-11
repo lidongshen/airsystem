@@ -46,6 +46,17 @@ public class FlightController {
 		}
 		return "no";
 	}
+	@RequestMapping(value="/delfAll",produces="text/html;charset=utf-8")
+	@ResponseBody
+	public String delFAll(int[] data) {
+		for(int i=0;i<data.length;i++) {
+			int delFlight = fs.delFlight(data[i]);
+			if(delFlight<=0) {
+				return "no";
+			}
+		}
+		return "ok";
+	}
 	
 	@RequestMapping("/lookflight")
 	public String lookFlight() {

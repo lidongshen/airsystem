@@ -1,5 +1,5 @@
-
 var tableload;
+var pageNo;
 layui.use(['table','util'],function() {
 		var table = layui.table;
 		var util = layui.util;
@@ -52,8 +52,6 @@ layui.use(['table','util'],function() {
 							field : 'fSeatnum',
 							title : '座位数',
 							unresize : true,
-							sort : true,
-							width:100,
 						},
 						{
 							field : 'fStarttime',
@@ -86,6 +84,8 @@ layui.use(['table','util'],function() {
 						"data" : res.data
 					// 解析数据列表
 					};
+				},done: function(res, curr, count){
+					pageNo=curr;
 				}
 			});
 	table.on('tool(flight)', function(obj) {
@@ -177,9 +177,8 @@ layui.use(['table','util'],function() {
 			})
 		}
 	});
-	
 	table.on('toolbar(flight)', function(obj){
-		  var checkStatus = table.checkStatus(obj.config.id);
+		  var checkStatus = table.checkStatus('demo');
 		  var data = checkStatus.data;
 		  switch(obj.event){
 		    case 'add':
@@ -203,20 +202,45 @@ layui.use(['table','util'],function() {
 		    	 if(data.length === 0){
 			          layer.msg('请选择一行');
 			        } else {
-			          $.ajax({
-			        	  url:'',
-			        	  data:data,
+			        	var checkdata=[];
+			        	for(i = 0;i<data.length;i++){
+			        		checkdata.push(data[i].fId);
+			        	}
+			         $.ajax({
+			        	  url:'delfAll',
+			        	  data:{'data':checkdata},
+			        	  type:'post',
+			        	  traditional:true, 
+			        	  success:function(e){
+			        		  console.log(e)
+								if(e=='ok'){
+									layer.msg('删除成功', {
+										  icon: 1,
+										  shadeClose:true,
+										  time: 1000 // 1秒关闭（如果不配置，默认是3秒）
+										},function(){
+											
+											console.log(pageNo)
+											table.reload("demo", {
+													    curr: pageNo-1
+													  });
+									});
+								}else{
+									layer.msg('删除失败', {
+										  icon: 2,
+										  titl:false,
+										  time: 1000 // 1秒关闭（如果不配置，默认是3秒）
+									}); 
+								}
+							
+			        	  }
 			        	  
 			          })
-			          console.log(data)
 			        }
 		    break;
 		  };
 	});
 	
-//	table.on('checkbox(flight)', function(obj){
-//		  console.log(obj.data.fId); //选中行的相关数据
-//	});
 	
 	
 });
