@@ -69,7 +69,7 @@
 
 		<div class="layui-footer">
 			<!-- 底部固定区域 -->
-			© dsHK.com - 底部固定区域
+			Air and space ticketing system
 		</div>
 	</div>
 </body>
