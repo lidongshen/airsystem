@@ -33,9 +33,14 @@ public class UserController {
 		}
 		String from = request.getParameter("from");
 		String to = request.getParameter("to");		
+		String time = request.getParameter("time");
+		System.out.println(from);
+		System.out.println(to);
+		System.out.println(time);
 		ModelAndView mv = new ModelAndView("user/list");
 		List<Flight> f = userService.findTicket(from, to);
 		mv.addObject("f",f);
+		mv.addObject("time", time);
 		return mv;
 	} 
 	
@@ -74,6 +79,11 @@ public class UserController {
 	@RequestMapping(value="/orderTicket/{fId}",produces = "text/plain;charset=utf-8")
 	public ModelAndView orderTicket(@PathVariable("fId") int fId,HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("user/orderTicket");
+		return mv;
+	}
+	@RequestMapping("/index")
+	public ModelAndView index() {
+		ModelAndView mv = new ModelAndView("user/index");
 		return mv;
 	}
 

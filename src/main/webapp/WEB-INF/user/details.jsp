@@ -42,8 +42,8 @@
 					<td>${oneFlight.fTocity}</td>
 					<td>${oneFlight.fMoney}</td>
 					<%-- <td>${oneFlight.fseatnum}</td> --%>
-					<td>${oneFlight.fStartdate}</td>
-					<td>${oneFlight.fEnddate}</td>
+					<td>${oneFlight.fStarttime}</td>
+					<td>${oneFlight.fEndtime}</td>
 					<td>
 						<a href="#" onclick=orderTicket(${oneFlight.fId})>订票</a>
 					</td>
@@ -52,7 +52,7 @@
 		</table>
 		
 	</center>
-	<script type="text/javascript" src = "/airsys/assets/js/orderTicket.js"></script>
+	<script type="text/javascript" src = "/airsys/assets/js/userOrderTicket.js"></script>
 </body>
 
 </html>
