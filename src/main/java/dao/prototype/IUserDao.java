@@ -35,4 +35,11 @@ public interface IUserDao {
 	boolean isLogin(String username,String password);
 	
 	boolean isOutTicket(int uId,int fId);
+	
+	void saveOrUpdateBooking(int uId,int fId,int bIspay);
+	
+	void saveOrUpdateTrip(int uId,int fId,int uIspay);
+	
+	void saveOrUpdateOutTicket(int uId,int fId,int oIsout);
+	
 }
