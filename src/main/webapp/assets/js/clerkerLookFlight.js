@@ -1,3 +1,3 @@
-function clerkerLookFlight{
+function clerkerLookFlight(){
 	window.location.href="clerkerLookFlight/";
 }

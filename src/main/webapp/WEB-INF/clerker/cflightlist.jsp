@@ -39,10 +39,10 @@
 					<td>${f.fName}</td>
 					<td>${f.fFromcity}</td>
 					<td>${f.fTocity}</td>
-					<td>${f.fStartdate}</td>
-					<td>${f.fEnddate}</td>
+					<td>${f.fStarttime}</td>
+					<td>${f.fEndtime}</td>
 					<td>
-						<a href="#" onclick=clerkerLookFlight>查看详情</a>
+						<a href="flightinfo" onclick=clerkerLookFlight>查看详情</a>
 					</td>
 				</tr>
 			</c:forEach>

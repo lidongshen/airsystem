@@ -34,6 +34,13 @@ public class TestClerkerDao {
 		}
 	}
 	@Test
+	public void testFlightinfo() {
+		List<Flight> f = clerkerdao.findFlightinfo(1);
+		for (Flight f1 : f) {
+			System.out.println(f1);
+		}
+	}
+	@Test
 	public void testFindAllUser() {
 		List<User> u = clerkerdao.findUserAll();
 		for (User u1 : u) {

@@ -27,6 +27,11 @@ public class ClerkerServiceImpl implements IClerkerService {
 	}
 	
 	@Override
+	public List<Flight> seachFlightinfo(int fid) {
+		return clerkerdao.findFlightinfo(fid);
+	}
+	
+	@Override
 	public List<User> seachUserAll() {
 		return clerkerdao.findUserAll();
 	}	
