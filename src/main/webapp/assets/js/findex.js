@@ -1,3 +1,4 @@
+
 var tableload;
 layui.use(['table','util'],function() {
 		var table = layui.table;
@@ -221,3 +222,4 @@ layui.use(['table','util'],function() {
 });
 
 	  
+

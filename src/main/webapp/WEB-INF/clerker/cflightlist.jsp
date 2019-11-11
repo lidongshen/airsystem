@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -42,7 +42,7 @@
 					<td>${f.fStartdate}</td>
 					<td>${f.fEnddate}</td>
 					<td>
-						<a href="#" onclick=userLookFlight(${f.fId})>查看详情</a>
+						<a href="#" onclick=clerkerLookFlight>查看详情</a>
 					</td>
 				</tr>
 			</c:forEach>
@@ -51,7 +51,7 @@
 		</table>
 		
 	</center>
-	<script type="text/javascript" src = "/airsys/assets/js/userLookFlight.js"></script>
+	<script type="text/javascript" src = "/airsys/assets/js/clerkerLookFlight.js"></script>
 </body>
 
 </html>

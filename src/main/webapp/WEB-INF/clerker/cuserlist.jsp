@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,39 +19,38 @@
 
 </head>
 <body>
-	<h3 align="center">航班信息</h3>
+	<h3 align="center">用户信息</h3>
 	<hr color="red">
 	<center>
 		<table  border="1px" cellspacing="0" cellpadding="0">
 			<tr>
-				<th>航班ID</th>
-				<th>航班名字</th>
-				<th>起始地</th>
-				<th>目的地</th>
-				<th>出发时间</th>
-				<th>抵达时间</th>
+				<th>用户ID</th>
+				<th>用户姓名</th>
+				<th>用户密码</th>
+				<th>用户电话</th>
+				<th>用户年龄</th>
+				<th>用户性别</th>
 				<th>操作</th>
 			</tr>
 			
-			<c:forEach items="${f}" var="f">
+			<c:forEach items="${u}" var="u">
 				<tr>
-					<td>${f.fId}</td>
-					<td>${f.fName}</td>
-					<td>${f.fFromcity}</td>
-					<td>${f.fTocity}</td>
-					<td>${f.fStartdate}</td>
-					<td>${f.fEnddate}</td>
+					<td>${u.uId}</td>
+					<td>${u.uPhone}</td>
+					<td>${u.uPassword}</td>
+					<td>${u.uName}</td>
+					<td>${u.uAge}</td>
+					<td>${u.uSex}</td>
 					<td>
-						<a href="#" onclick=userLookFlight(${f.fId})>查看详情</a>
+						<a href="#" onclick=clerkerLookFlight>查看详情</a>
 					</td>
 				</tr>
 			</c:forEach>
 			
 			
 		</table>
-		
 	</center>
-	<script type="text/javascript" src = "/airsys/assets/js/userLookFlight.js"></script>
+	<script type="text/javascript" src = "/airsys/assets/js/clerkerLookFlight.js"></script>
 </body>
 
 </html>

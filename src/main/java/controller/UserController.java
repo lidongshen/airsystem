@@ -76,4 +76,5 @@ public class UserController {
 		ModelAndView mv = new ModelAndView("user/orderTicket");
 		return mv;
 	}
+
 }

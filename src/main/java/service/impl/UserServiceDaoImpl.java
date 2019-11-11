@@ -14,17 +14,56 @@ public class UserServiceDaoImpl implements IUserService{
 
 	@Autowired
 	private IUserDao userDao;
+
 	@Override
-	public List<Flight> order(int uId, String from, String to) {
-		return userDao.order(uId, from, to);
+	public void orderTicket(int uId, int fId) {
+		userDao.orderTicket(uId, fId);
 	}
+
 	@Override
-	public boolean isLogin(String username, String password) {
-		return userDao.isLogin(username, password);
+	public void drawerTicket(int uId, int fId) {
+		userDao.drawerTicket(uId, fId);
 	}
+
+	@Override
+	public void refundTicket(int uId, int fId) {
+		userDao.refundTicket(uId, fId);
+	}
+
+	@Override
+	public void endorseTicket(int uId, int fId1, int fId2) {
+		userDao.endorseTicket(uId, fId1, fId2);
+	}
+
+	@Override
+	public void pay(int uId, int fId) {
+		userDao.pay(uId, fId);
+	}
+
+	@Override
+	public List<Flight> findOrder(int uId, String from, String to) {
+		return userDao.findOrder(uId, from, to);
+	}
+
 	@Override
 	public List<Flight> findTicket(String from, String to) {
 		return userDao.findTicket(from, to);
 	}
+
+	@Override
+	public boolean isPay(int uId, int fId) {
+		return userDao.isPay(uId, fId);
+	}
+
+	@Override
+	public boolean isLogin(String username, String password) {
+		return userDao.isLogin(username, password);
+	}
+
+	@Override
+	public boolean isOutTicket(int uId, int fId) {
+		return userDao.isOutTicket(uId, fId);
+	}
+	
 
 }

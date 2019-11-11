@@ -19,12 +19,12 @@ public class TestUserDao {
 	private IUserDao userDao;
 	@Test
 	public void testOrder() {
-		List<Flight> order = userDao.order(1, "太原", "北京");
+		List<Flight> order = userDao.findOrder(1, "太原", "北京");
 		System.out.println(order);
 	}
 	@Test
 	public void testFindTicket() {
-		List<Flight> findTicket = userDao.findTicket("太原", "云南");
+		List<Flight> findTicket = userDao.findTicket("太原", "北京");
 		System.out.println(findTicket);
 	}
 	@Test
@@ -36,5 +36,34 @@ public class TestUserDao {
 	public void testIsPay() {
 		boolean flag = userDao.isPay(1, 1);
 		System.out.println(flag);
+	}
+	@Test
+	public void testIsOutTicket() {
+		boolean flag = userDao.isOutTicket(1, 1);
+		System.out.println(flag);
+	}
+	
+	
+	
+	
+	@Test
+	public void orderTicket() {
+		userDao.orderTicket(1, 5);
+	}
+	@Test
+	public void payTicket() {
+		userDao.pay(1,5);
+	}
+	@Test
+	public void endorseTicket() {
+		userDao.endorseTicket(1, 5, 4);
+	}
+	@Test
+	public void testDrawer() {
+		userDao.drawerTicket(1, 4);
+	} 
+	@Test
+	public void refundTicket() {
+		userDao.refundTicket(1, 5);
 	}
 }
