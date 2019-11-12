@@ -14,9 +14,10 @@ public interface IClerkerDao {
 		//用户查询
 		List<User>  findUserAll();
 		List<User>  findUser(int uid);
+		//修改用户信息
+		void Modify(int uid);
 		//订票
 		void orderTicket(int uId,int fId);
-		
 		//出票
 		void drawerTicket(int uId,int fId);
 		

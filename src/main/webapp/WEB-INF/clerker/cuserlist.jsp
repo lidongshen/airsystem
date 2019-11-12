@@ -10,7 +10,7 @@
 	<script src="/airsys/assets/jquery-validation/lib/jquery.js"></script>
 	<script src="/airsys/assets/jquery-validation/dist/jquery.validate.min.js"></script>
 	<script src="/airsys/assets/jquery-validation/dist/localization/messages_zh.js"></script>
-
+	<link rel="stylesheet" href="/airsys/assets/css/bootstrap.css">
 	<style>
 		a{
 			text-decoration: none;
@@ -22,7 +22,8 @@
 	<h3 align="center">用户信息</h3>
 	<hr color="red">
 	<center>
-		<table  border="1px" cellspacing="0" cellpadding="0">
+	<div class="container">
+		<table  class="table table-bordered">
 			<tr>
 				<th>用户ID</th>
 				<th>用户姓名</th>
@@ -49,6 +50,7 @@
 			
 			
 		</table>
+	</div>	
 	</center>
 	<script type="text/javascript" src = "/airsys/assets/js/clerkerLookFlight.js"></script>
 </body>
