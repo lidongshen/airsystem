@@ -1,3 +1,3 @@
-function clerkerLookFlight(){
-	window.location.href="clerkerLookFlight/";
+function clerkerLookFlight(fId){
+	window.location.href="/airsys/flightinfo/"+fId;
 }

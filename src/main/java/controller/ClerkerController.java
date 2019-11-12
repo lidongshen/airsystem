@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,6 +27,11 @@ public class ClerkerController {
 	public String huanying(){
 		return "clerker/huanying";
 	}
+	@RequestMapping("/clogin")
+	public String clogin(){
+		
+		return "login/clogin";
+	}
 	
 	@RequestMapping(value = "/cflightlist",produces = "text/plain;charset=utf-8")
 	public ModelAndView seachFlightAll() {
@@ -34,7 +40,15 @@ public class ClerkerController {
 		mv.addObject("f",f);
 		return mv;
 	} 
-	 
+	
+	@RequestMapping(value = "/flightinfo/{fId}",produces = "text/plain;charset=utf-8")
+	public ModelAndView seachflightinfo(@PathVariable int fId) {
+		ModelAndView mv = new ModelAndView("clerker/flightinfo");
+		List<Flight> f = clerkerService.seachFlightinfo(fId);
+		mv.addObject("f",f);
+		return mv;
+	} 
+	
 	
 	@RequestMapping(value = "/cuserlist",produces = "text/plain;charset=utf-8")
 	public ModelAndView seachuserAll() {

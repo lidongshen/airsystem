@@ -9,6 +9,7 @@ import entity.Flight;
  * @author s
  *
  */
+
 public interface IFlightService {
 	List<Flight> seachFlightAll();
 	Flight seachFlight(int id);

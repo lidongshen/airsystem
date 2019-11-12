@@ -9,7 +9,6 @@ import dao.prototype.IFlightDao;
 import entity.Flight;
 import service.prototype.IFlightService;
 
-@Service("flightServiceImpl")
 public class FlightServiceImpl implements IFlightService{
 	@Autowired
 	private IFlightDao flightDao;
