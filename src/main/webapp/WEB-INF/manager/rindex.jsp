@@ -16,17 +16,14 @@
 <body class="layui-layout-body">
 	<div class="layui-layout layui-layout-admin">
 		<div class="layui-header">
-			<div class="layui-logo">您的工号为<span>root</span></div>
-			<!-- 头部区域（可配合layui已有的水平导航） -->
-			<ul class="layui-nav layui-layout-left">
-				<li class="layui-nav-item"><a href="">天气</a></li>
-			</ul>
+			<div class="layui-logo">您的工号为&nbsp;<span class="user"></span></div>
 			<ul class="layui-nav layui-layout-right">
 				<li class="layui-nav-item">
 				<img src="/airsys/assets/image/houtai.jpg" class="layui-nav-img"> 
-				<span>root</span>
+				<span class="user"></span>
 				</li>
-				<li class="layui-nav-item"><a href="">退出登录</a></li>
+				<li class="layui-nav-item">&nbsp;&nbsp;天气</li>
+				<li class="layui-nav-item exitbtn"><a href="javascript:;">退出登录</a></li>
 			</ul>
 		</div>
 

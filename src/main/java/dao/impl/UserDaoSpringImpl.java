@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import dao.prototype.IUserDao;
 import entity.Flight;
@@ -20,6 +21,7 @@ public class UserDaoSpringImpl implements IUserDao{
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
+	@Transactional
 	public void orderTicket(int uId, int fId) {
 		
 		jdbcTemplate.update("insert into booking (u_id,c_id,f_id,b_ispay) values("+uId+",0,"+fId+",0)");
@@ -35,6 +37,7 @@ public class UserDaoSpringImpl implements IUserDao{
 	}
 	//退票
 	@Override
+	@Transactional
 	public void refundTicket(int uId, int fId) {
 		jdbcTemplate.update(
 				"update trip set u_ispay=0 where u_id=? and f_id=?",
@@ -48,6 +51,7 @@ public class UserDaoSpringImpl implements IUserDao{
 	}
 	//改签
 	@Override
+	@Transactional
 	public void endorseTicket(int uId, int fId1,int fId2) {
 		jdbcTemplate.update(
 				"update trip set f_id = ? where u_id = ? and f_id=?",
@@ -61,6 +65,9 @@ public class UserDaoSpringImpl implements IUserDao{
 	public void pay(int uId, int fId) {
 		jdbcTemplate.update(
 				"update trip set u_ispay=1 where u_id=? and f_id=?",
+				new Object[]{uId,fId});
+		jdbcTemplate.update(
+				"update trip set b_ispay=1 where u_id=? and f_id=?",
 				new Object[]{uId,fId});
 	}
 
@@ -116,6 +123,25 @@ public class UserDaoSpringImpl implements IUserDao{
 			flag=true;
 		}
 		return flag;
+	}
+	@Override
+	public void saveOrUpdateBooking(int uId, int fId, int bIspay) {
+		
+	}
+	@Override
+	public void saveOrUpdateTrip(int uId, int fId, int uIspay) {
+		
+	}
+	@Override
+	public void saveOrUpdateOutTicket(int uId, int fId, int oIsout) {
+		
+	}
+	@Override
+	public User findUser(String name) {
+		return jdbcTemplate.queryForObject(
+				"select * from user where u_phone = ?",
+				new Object[]{name},
+				new BeanPropertyRowMapper<User>(User.class));
 	}
 	
 	

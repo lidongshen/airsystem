@@ -3,12 +3,15 @@ package dao.prototype;
 import java.util.List;
 
 import entity.Flight;
+import entity.User;
 /**
  * IUserDao接口
  * @author Administrator
  *
  */
 public interface IUserDao {
+	
+	User findUser(String name);
 	//订票
 	void orderTicket(int uId,int fId);
 	
@@ -35,4 +38,13 @@ public interface IUserDao {
 	boolean isLogin(String username,String password);
 	
 	boolean isOutTicket(int uId,int fId);
+	
+	void saveOrUpdateBooking(int uId,int fId,int bIspay);
+	
+	void saveOrUpdateTrip(int uId,int fId,int uIspay);
+	
+	void saveOrUpdateOutTicket(int uId,int fId,int oIsout);
+	
+	
+	
 }

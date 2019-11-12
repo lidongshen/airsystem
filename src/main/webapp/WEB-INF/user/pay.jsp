@@ -16,7 +16,7 @@ pay success
     
 </head>
 <body>
-    <form method="post" id="form1" action="index.jsp" >
+    <form method="post" id="form1" action="/airsys/user/index" >
          <input class="submit" type="submit" value="返回主页面">
    	</form>
 </body>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import dao.prototype.IUserDao;
 import entity.Flight;
+import entity.User;
 import service.prototype.IUserService;
 
 @Service
@@ -63,6 +64,11 @@ public class UserServiceDaoImpl implements IUserService{
 	@Override
 	public boolean isOutTicket(int uId, int fId) {
 		return userDao.isOutTicket(uId, fId);
+	}
+
+	@Override
+	public User findUser(String username) {
+		return userDao.findUser(username);
 	}
 	
 

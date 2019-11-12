@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import config.TestConfig;
 import dao.prototype.IUserDao;
 import entity.Flight;
+import entity.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes= {TestConfig.class})
@@ -65,5 +66,12 @@ public class TestUserDao {
 	@Test
 	public void refundTicket() {
 		userDao.refundTicket(1, 5);
+	}
+	
+	
+	@Test
+	public void testFindU() {
+		User findUser = userDao.findUser("10001");
+		System.out.println(findUser);
 	}
 }

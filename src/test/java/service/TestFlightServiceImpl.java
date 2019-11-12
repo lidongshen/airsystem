@@ -11,7 +11,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import config.TestConfig;
 import entity.Flight;
 import service.prototype.IFlightService;
-import util.DateUtil;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=(TestConfig.class))

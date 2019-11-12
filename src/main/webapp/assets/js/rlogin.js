@@ -21,4 +21,25 @@ $(function() {
 			}
 		}
 	})
+	
+	
+	$("#commit").on('click',function(){
+		var data="rname="+$("#rname").val()+"&rpwd="+$("#rpwd").val();
+		$.ajax({
+			url:"rl",
+			data:data,
+			type:'post',
+			success:function(e){
+				if(e=='ok'){
+					window.location.href="rindex";
+				}else{
+					alert("用户名或者密码错误")
+					window.location.href="rlogin";
+				}
+			}
+		})
+	})
+	
+	
+	
 })

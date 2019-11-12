@@ -17,8 +17,8 @@
     <form action="logins" method="POST" class="zong" >
         <p class="p1" style="width:100%;height:32px;font-weight: 600;font-size: 22px;margin:15px 0 10px;">用户登录</p>
         <div class="form-group">
-            <label for="uname">用户名</label>
-            <input type="text" class="form-control" id="uname" name="uname" placeholder="请输入用户名">
+            <label for="username">用户名</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名">
           </div>
           <div class="form-group">
             <label for="upwd">密码</label>
@@ -26,5 +26,6 @@
         </div>
         <button type="submit" class="btn btn-success" style="margin-left:10%;width:80%;margin-bottom:20px;" >登录</button>
     </form>
+    <%  %>
 </body>
 </html>

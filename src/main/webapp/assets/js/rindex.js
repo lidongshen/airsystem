@@ -7,11 +7,10 @@ $(function() {
 	$(document).queue([function(){
 		// 检查session
 		$.ajax({
-			url : "checksession.jsp",
+			url : "checksession",
 			success : function(e) {
-				var result = e.replace(/\s/g, "");
-				if (result == "ok") {
-					window.location.href = "login.html"
+				if (e == "no") {
+					window.location.href = "rlogin"
 				}
 			},
 			complete:function(){
@@ -21,7 +20,7 @@ $(function() {
 	},function(){
 		//得到uname
 		$.ajax({
-			url : "getuname.jsp",
+			url : "getrname",
 			success : function(e) {
 				$(".user").html(e)
 			},
@@ -42,11 +41,10 @@ $(function() {
 					  move:false,
 					  yes: function(index, layero){
 						  $.ajax({
-								url : "exit.jsp",
+								url : "exitsession",
 								success : function(e) {
-									var result = e.replace(/\s/g, "");
-									if (result == "ok") {
-										window.location.href = "login.html"
+									if (e == "ok") {
+										window.location.href = "rlogin"
 									}
 								}
 							}),

@@ -15,7 +15,7 @@ layui.use(['table','util'],function() {
 		table.render({
 				elem : '#demo',
 				height : 500,
-				url : 'fseach',
+				url : 'buseach',
 				page : true,
 				toolbar : '#toolbarDemo',
 				cellMinWidth : 80,
@@ -28,53 +28,33 @@ layui.use(['table','util'],function() {
 							type : 'checkbox'
 						},
 						{
-							field : 'fId',
+							field : 'bId',
 							title : 'ID',
 							sort : true,
 							unresize : true,
 						},
 						{
-							field : 'fName',
-							title : '飞机名称',
+							field : 'bName',
+							title : '站点名称',
 							unresize : true,
 							width:140
 						},
 						{
-							field : 'fFromcity',
-							title : '始发地',
+							field : 'bProvince',
+							title : '省份',
 						},
 						{
-							field : 'fTocity',
-							title : '目的地',
+							field : 'bCity',
+							title : '城市',
 							unresize : true,
 						},
 						{
-							field : 'fMoney',
-							title : '价钱',
+							field : 'bPhone',
+							title : '电话',
 							sort : true,
 							unresize : true,
 						},
-						{
-							field : 'fSeatnum',
-							title : '座位数',
-							unresize : true,
-						},
-						{
-							field : 'fStarttime',
-							title : '起飞时间',
-							sort : true,
-							unresize : true,
-							width:160,
-							templet : '<div>{{ layui.util.toDateString(d.fStarttime,"yyyy-MM-dd HH:mm:ss") }}</div>'
-						},
-						{
-							field : 'fEndtime',
-							title : '到达时间',
-							sort : true,
-							unresize : true,
-							width:160,
-							templet : '<div>{{ layui.util.toDateString(d.fEndtime,"yyyy-MM-dd HH:mm:ss") }}</div>'
-						}, {
+						 {
 							title : '操作',
 							fixed:'right',
 							toolbar : '#barDemo',
@@ -105,8 +85,8 @@ layui.use(['table','util'],function() {
 			layer.confirm('您确认删除本次航班吗？', {shade: [0.8, '#393D49'], shadeClose:true,},function(index) {
 				// 向服务端发送删除指令
 				$.ajax({
-					url:'delf',
-					data:{'fId' : data.fId},
+					url:'delbu',
+					data:{'bId' : data.bId},
 					type:'post',
 					success:function(e){
 						if(e=='ok'){
@@ -137,7 +117,7 @@ layui.use(['table','util'],function() {
 			layer.open({
 				  type: 2,
 				  title:'航班信息',
-				  content: 'lookflight',
+				  content: 'lookbu',
 				  shade: [0.8, '#393D49'],
 				  shadeClose:true,
 				  move:false,
@@ -149,15 +129,11 @@ layui.use(['table','util'],function() {
 				    layer.setTop(layero); //重点2
 				    var body = layer.getChildFrame('body', index);
 				    var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
-				    body.find("input[name=fId]").val(data.fId);
-				    body.find("input[name=fId]").val(data.fId);
-				    body.find("input[name=fName]").val(data.fName);
-				    body.find("input[name=fMoney]").val(data.fMoney);
-				    body.find("input[name=fSeatnum]").val(data.fSeatnum);
-				    body.find("input[name=fFromcity]").val(data.fFromcity);
-				    body.find("input[name=fTocity]").val(data.fTocity);
-				    body.find("input[name=fStarttime]").val(util.toDateString(data.fStarttime, "yyyy-MM-dd HH:mm:ss"));
-				    body.find("input[name=fEndtime]").val(util.toDateString(data.fEndtime, "yyyy-MM-dd HH:mm:ss"));
+				    body.find("input[name=bId]").val(data.bId);
+				    body.find("input[name=bName]").val(data.bName);
+				    body.find("input[name=bProvince]").val(data.bProvince);
+				    body.find("input[name=bCity]").val(data.bCity);
+				    body.find("input[name=bPhone]").val(data.bPhone);
 				     
 				  }
 			});  
@@ -165,7 +141,7 @@ layui.use(['table','util'],function() {
 			layer.open({
 				  type: 2,
 				  title:'修改航班',
-				  content: 'editflight',
+				  content: 'editbu',
 				  shade: [0.8, '#393D49'],
 				  shadeClose:true,
 				  move:false,
@@ -176,16 +152,11 @@ layui.use(['table','util'],function() {
 				  success: function(layero,index){
 				    layer.setTop(layero); //重点2
 				    var body = layer.getChildFrame('body', index);
-				    body.find("input[name=fId]").val(data.fId);
-				    body.find("input[name=fId]").val(data.fId);
-				    body.find("input[name=fName]").val(data.fName);
-				    body.find("input[name=fMoney]").val(data.fMoney);
-				    body.find("input[name=fSeatnum]").val(data.fSeatnum);
-				    body.find("input[name=fFromcity]").val(data.fFromcity);
-				    body.find("input[name=fTocity]").val(data.fTocity);
-				    body.find("input[name=fStarttime]").val(util.toDateString(data.fStarttime, "yyyy-MM-dd HH:mm:ss"));
-				    body.find("input[name=fEndtime]").val(util.toDateString(data.fEndtime, "yyyy-MM-dd HH:mm:ss"));
-				 }
+				    body.find("input[name=bId]").val(data.bId);
+				    body.find("input[name=bName]").val(data.bName);
+				    body.find("input[name=bProvince]").val(data.bProvince);
+				    body.find("input[name=bCity]").val(data.bCity);
+				    body.find("input[name=bPhone]").val(data.bPhone);				 }
 			})
 		}
 	});
@@ -197,7 +168,7 @@ layui.use(['table','util'],function() {
 		    	layer.open({
 					  type: 2,
 					  title:'添加航班信息',
-					  content: 'addflight',
+					  content: 'addbu',
 					  shade: [0.8, '#393D49'],
 					  shadeClose:true,
 					  move:false,
@@ -216,10 +187,10 @@ layui.use(['table','util'],function() {
 			        } else {
 			        	var checkdata=[];
 			        	for(i = 0;i<data.length;i++){
-			        		checkdata.push(data[i].fId);
+			        		checkdata.push(data[i].bId);
 			        	}
 			         $.ajax({
-			        	  url:'delfAll',
+			        	  url:'delbuAll',
 			        	  data:{'data':checkdata},
 			        	  type:'post',
 			        	  traditional:true, 

@@ -6,15 +6,15 @@ $(function(){
           var $=layui.jquery;
 		  laydate.render({
 			  elem:'#fEndtime',
-			  type:'time',
-			  format:'HH:mm:ss',
+			  type:'datetime',
+			  format:'yyyy-MM-dd HH:mm:ss',
 			  trigger: 'click',
 			  theme:'molv'
 		  });
 		  laydate.render({
 			  elem:'#fStarttime',
-			  type:'time',
-			  format:'HH:mm:ss',
+			  type:'datetime',
+			  format:'yyyy-MM-dd HH:mm:ss',
 			  trigger: 'click',
 			  theme:'molv',
 		  });

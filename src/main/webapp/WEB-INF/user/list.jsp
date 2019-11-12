@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ page import="java.io.*,java.util.*,java.sql.*,util.*"%>
+<% String uId = session.getAttribute("uId").toString(); 
+out.print(session.getAttribute("uId"));
+%>
 <!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,7 +27,6 @@
 	<center>
 		<table  border="1px" cellspacing="0" cellpadding="0">
 			<tr>
-				<th>航班ID</th>
 				<th>航班名字</th>
 				<th>起始地</th>
 				<th>目的地</th>
@@ -35,12 +37,13 @@
 			
 			<c:forEach items="${f}" var="f">
 				<tr>
-					<td>${f.fId}</td>
 					<td>${f.fName}</td>
 					<td>${f.fFromcity}</td>
-					<td>${f.fTocity}</td>
-					<td>${f.fStartdate}</td>
-					<td>${f.fEnddate}</td>
+					<td>${f.fTocity}+${time}</td>
+					<td>
+						${f.fStarttime}
+					</td>
+					<td>${f.fEndtime}</td>
 					<td>
 						<a href="#" onclick=userLookFlight(${f.fId})>查看详情</a>
 					</td>
