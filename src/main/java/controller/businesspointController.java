@@ -1,83 +1,95 @@
 package controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.alibaba.fastjson.JSON;
+
+import entity.BusinessPoint;
+import service.prototype.IBusinessPointService;
 
 @Controller
 public class businesspointController {
-	
+	@Autowired
+	private IBusinessPointService bps;
 	
 	@RequestMapping("/buindex")
-	public String findex(){
+	public String buindex(){
 		return "businesspoint/buindex";
 	}
 	
-	/*@RequestMapping(value="/fseach",produces="text/html;charset=utf-8")
+	@RequestMapping(value="/buseach",produces="text/html;charset=utf-8")
 	@ResponseBody
-	public String seachFlight(int page, int limit) {
-		List<Flight> seachFlightAll = fs.flightPage(page, limit);
-		int totalItems = fs.totalItems();
+	public String seachBu(int page, int limit) {
+		List<BusinessPoint> buPage = bps.buPage(page, limit);
+		int totalItems = bps.totalItems();
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("total", totalItems);
-		map.put("data", seachFlightAll);
+		map.put("data", buPage);
 		return JSON.toJSONString(map);
 	}
 	
-	@RequestMapping(value="/delf",produces="text/html;charset=utf-8")
+	@RequestMapping(value="/delbu",produces="text/html;charset=utf-8")
 	@ResponseBody
-	public String delF(int fId) {
-		int delFlight = fs.delFlight(fId);
-		if(delFlight>0) {
+	public String delBu(int bId) {
+		int delBu= bps.delBu(bId);
+		if(delBu>0) {
 			return "ok";
 		}
 		return "no";
 	}
-	@RequestMapping(value="/delfAll",produces="text/html;charset=utf-8")
+	@RequestMapping(value="/delbuAll",produces="text/html;charset=utf-8")
 	@ResponseBody
-	public String delFAll(int[] data) {
+	public String delBuAll(int[] data) {
 		for(int i=0;i<data.length;i++) {
-			int delFlight = fs.delFlight(data[i]);
-			if(delFlight<=0) {
+			int delBu = bps.delBu(data[i]);
+			if(delBu<=0) {
 				return "no";
 			}
 		}
 		return "ok";
 	}
 	
-	@RequestMapping("/lookflight")
-	public String lookFlight() {
-		return "flight/lookflight";
+	@RequestMapping("/lookbu")
+	public String lookBu() {
+		return "businesspoint/lookbu";
 	}
 	
-	@RequestMapping("/addflight")
-	public String addFlight() {
-		return "flight/addflight";
+	@RequestMapping("/addbu")
+	public String addBu() {
+		return "businesspoint/addbu";
 	}
 	
-	@RequestMapping(value="/addf",produces="text/html;charset=utf-8")
+	@RequestMapping(value="/addbusinesspoint",produces="text/html;charset=utf-8")
 	@ResponseBody
-	public String addF(String fName,int fMoney,int fSeatnum,String fFromcity,String fTocity,String fStarttime,String fEndtime) {
-		Flight flight = new Flight(fName,fFromcity,fTocity,fMoney,fSeatnum,DateUtil.toDate("yyyy-MM-dd HH:mm:ss", fStarttime),DateUtil.toDate("yyyy-MM-dd HH:mm:ss", fEndtime));
-		int addFlight = fs.addFlight(flight);
-		if(addFlight>0) {
+	public String addBu(String bName,String bProvince,String bCity,String bPhone) {
+		BusinessPoint bu = new BusinessPoint(bName,bProvince,bCity,bPhone);
+		int addBu = bps.addBu(bu);
+		if(addBu>0) {
 			return "ok";
 		}
 		return "no";
 	}
 	
-	@RequestMapping("/editflight")
-	public String editFlight() {
-		return "flight/editflight";
+	@RequestMapping("/editbu")
+	public String editBu() {
+		return "businesspoint/editbu";
 	}
 	
-	@RequestMapping(value="/editf",produces="text/html;charset=utf-8")
+	@RequestMapping(value="/editbusinesspoint",produces="text/html;charset=utf-8")
 	@ResponseBody
-	public String editF(int fId,String fName,int fMoney,int fSeatnum,String fFromcity,String fTocity,String fStarttime,String fEndtime) {
-		Flight flight = new Flight(fId,fName,fFromcity,fTocity,fMoney,fSeatnum,DateUtil.toDate("yyyy-MM-dd HH:mm:ss", fStarttime),DateUtil.toDate("yyyy-MM-dd HH:mm:ss", fEndtime));
-		int addFlight = fs.modify(flight);
-		if(addFlight>0) {
+	public String editF(int bId,String bName,String bProvince,String bCity,String bPhone) {
+		BusinessPoint bu = new BusinessPoint(bId,bName,bProvince,bCity,bPhone);
+		int addBu = bps.modify(bu);
+		if(addBu>0) {
 			return "ok";
 		}
 		return "no";
-	}*/
+	}
 }

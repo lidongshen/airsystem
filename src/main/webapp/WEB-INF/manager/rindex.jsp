@@ -9,7 +9,6 @@
 <script src="/airsys/assets/jquery-validation/lib/jquery.js"></script>
 <link rel="stylesheet" href="/airsys/assets/layui/css/layui.css">
 <script src="/airsys/assets/layui/layui.js"></script>
-<script src="/airsys/assets/jquery-validation/lib/jquery.js"></script>
 <script src="/airsys/assets/js/rindex.js"></script>
 </head>
 

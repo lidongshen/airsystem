@@ -12,8 +12,8 @@
 <style>
 	from{
 		width:660px;
-		height:300px;
-		padding:20px 0 0 15px;
+		height:200px;
+		padding:10px 0 0 15px;
 		box-sizing:border-box;
 		position: absolute;
 		left:0;right:0;bottom: 0;top: 0;

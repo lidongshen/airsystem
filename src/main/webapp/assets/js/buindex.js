@@ -77,7 +77,7 @@ layui.use(['table','util'],function() {
 				}
 			});
 		
-	table.on('tool(flight)', function(obj) {
+	table.on('tool(bu)', function(obj) {
 		var data = obj.data; // 获得当前行数据
 		var layEvent = obj.event; // 获得 lay-event 对应的值（也可以是表头的event 参数对应的值）
 		var tr = obj.tr; // 获得当前行 tr 的 DOM 对象（如果有的话）
@@ -154,13 +154,14 @@ layui.use(['table','util'],function() {
 				    var body = layer.getChildFrame('body', index);
 				    body.find("input[name=bId]").val(data.bId);
 				    body.find("input[name=bName]").val(data.bName);
-				    body.find("input[name=bProvince]").val(data.bProvince);
-				    body.find("input[name=bCity]").val(data.bCity);
-				    body.find("input[name=bPhone]").val(data.bPhone);				 }
+				    body.find("#bProvince option[value=data.bProvince]").attr();
+				    body.find("select[name=bCity]").val(data.bCity);
+				    body.find("input[name=bPhone]").val(data.bPhone);				 
+				  }
 			})
 		}
 	});
-	table.on('toolbar(flight)', function(obj){
+	table.on('toolbar(bu)', function(obj){
 		  var checkStatus = table.checkStatus(obj.config.id);
 		  var data = checkStatus.data;
 		  switch(obj.event){
@@ -173,7 +174,7 @@ layui.use(['table','util'],function() {
 					  shadeClose:true,
 					  move:false,
 					  anim:2,
-					  area: ['850px','400px'],
+					  area: ['700px','400px'],
 					  resize:false,
 					  zIndex: layer.zIndex, //重点1
 					  success: function(layero){

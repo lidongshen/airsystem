@@ -13,7 +13,7 @@
 <style>
 	from{
 		width:660px;
-		height:300px;
+		height:200px;
 		padding-left:15px;
 		box-sizing:border-box;
 		position: absolute;
@@ -34,23 +34,34 @@
 			<div class="layui-inline">
 				<label class="layui-form-label">网点名称</label>
 				<div class="layui-input-inline">
-					<input type="text" disabled="disabled" name="bName" lay-verify="required" placeholder="请输入网点名称" autocomplete="off" class="layui-input">
+					<input type="text"  name="bName" lay-verify="required" placeholder="请输入网点名称" autocomplete="off" class="layui-input">
 				</div>
 			</div>
 		</div>
 		
 		<div class="layui-form-item">
 			<div class="layui-inline">
-				<label class="layui-form-label">省份</label>
+				<label class="layui-form-label">地区</label>
 				<div class="layui-input-inline">
-					<input type="text" disabled="disabled" name="bProvince" lay-verify="required" placeholder="请输入省份" autocomplete="off" class="layui-input">
-				</div>
-			</div>
-			<div class="layui-inline">
-				<label class="layui-form-label">城市</label>
-				<div class="layui-input-inline">
-					<input type="text" disabled="disabled" name="bCity" lay-verify="required" placeholder="请输入城市" autocomplete="off" class="layui-input">
-				</div>
+			      <select name="bProvince" id=""bProvince"">
+			        <option value="">请选择省</option>
+			        <option value="北京">北京</option>
+			        <option value="浙江">浙江</option>
+			        <option value="江西">江西</option>
+			        <option value="山西">山西</option>
+			      </select>
+			    </div>
+			    <div class="layui-input-inline">
+			      <select name="bCity" id="bCity">
+			        <option value="">请选择市</option>
+			        <option value="大兴">大兴</option>
+			        <option value="杭州">杭州</option>
+			        <option value="温州">温州</option>
+			        <option value="台州">台州</option>
+			        <option value="绍兴">绍兴</option>
+			        <option value="太原">太原</option>
+			      </select>
+			    </div>
 			</div>
 		</div>
 		
@@ -58,7 +69,7 @@
 			<div class="layui-inline">
 				<label class="layui-form-label">电话</label>
 				<div class="layui-input-inline">
-					<input type="text" disabled="disabled" name="bPhone" lay-verify="required|phone" placeholder="请输入电话" autocomplete="off" class="layui-input">
+					<input type="text"  name="bPhone" lay-verify="required|phone" placeholder="请输入电话" autocomplete="off" class="layui-input">
 				</div>
 			</div>
 			
