@@ -13,7 +13,7 @@ import dao.prototype.IFlightDao;
 import entity.Flight;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=(TestConfig.class))
+@ContextConfiguration(classes = {TestConfig.class})
 public class TestFlightDaoImpl {
 	@Autowired
 	private IFlightDao fd;
@@ -37,4 +37,6 @@ public class TestFlightDaoImpl {
 	public void find() {
 		System.out.println(fd.findFlight(2));
 	}
+
+
 }
