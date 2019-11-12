@@ -14,7 +14,7 @@
 	 <link rel="stylesheet" href="/airsys/assets/css/rlogin.css">
 </head>
 <body>
-    <form action="#" method="POST" class="zong" >
+    <form  class="zong">
         <p class="p1" style="width:100%;height:32px;font-weight: 600;font-size: 22px;margin:15px 0 10px;">管理员登录</p>
         <div class="form-group">
             <label for="rname">用户名</label>
@@ -24,7 +24,7 @@
             <label for="rpwd">密码</label>
             <input type="password" class="form-control" id="rpwd" name="rpwd"  placeholder="请输入密码">
         </div>
-        <button type="submit" class="btn btn-success" style="margin-left:10%;width:80%;margin-bottom:20px;" >登录</button>
+        <input class="btn btn-success" id="commit" type="button" style="margin-left:10%;width:80%;margin-bottom:20px;"  value="登录">
     </form>
 </body>
 </html>

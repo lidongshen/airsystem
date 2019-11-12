@@ -3,16 +3,16 @@ package entity;
 import java.util.Date;
 
 public class Booking {
-	private int bId;
+	private int bookId;
 	private int uId;
 	private int cId;
 	private int fId;
 	private Date bDate;
 	private int bIspay;
 	
-	public Booking(int bId, int uId, int cId, int fId, Date bDate, int bIspay) {
+	public Booking(int bookId, int uId, int cId, int fId, Date bDate, int bIspay) {
 		super();
-		this.bId = bId;
+		this.bookId = bookId;
 		this.uId = uId;
 		this.cId = cId;
 		this.fId = fId;
@@ -31,7 +31,7 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Booking [bId=" + bId + ", uId=" + uId + ", cId=" + cId + ", fId=" + fId + ", bDate=" + bDate
+		return "Booking [bookId=" + bookId + ", uId=" + uId + ", cId=" + cId + ", fId=" + fId + ", bDate=" + bDate
 				+ ", bIspay=" + bIspay + "]";
 	}
 
@@ -40,7 +40,7 @@ public class Booking {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((bDate == null) ? 0 : bDate.hashCode());
-		result = prime * result + bId;
+		result = prime * result + bookId;
 		result = prime * result + bIspay;
 		result = prime * result + cId;
 		result = prime * result + fId;
@@ -62,7 +62,7 @@ public class Booking {
 				return false;
 		} else if (!bDate.equals(other.bDate))
 			return false;
-		if (bId != other.bId)
+		if (bookId != other.bookId)
 			return false;
 		if (bIspay != other.bIspay)
 			return false;
@@ -75,12 +75,12 @@ public class Booking {
 		return true;
 	}
 
-	public int getbId() {
-		return bId;
+	public int getbookId() {
+		return bookId;
 	}
 
-	public void setbId(int bId) {
-		this.bId = bId;
+	public void setbookId(int bookId) {
+		this.bookId = bookId;
 	}
 
 	public int getuId() {

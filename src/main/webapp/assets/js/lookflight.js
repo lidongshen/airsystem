@@ -18,18 +18,6 @@ $(function(){
 			  theme:'molv',
 		  });
 		  
-		  
-		  /*form.val("flight1", { 
-		  "fId": 1
-		  ,"fName": "女"
-		  ,"fMoney": 3
-		  ,"fSeatnum": 123
-		  ,"fFromcity": 'fd'
-		  ,"fTocity": "我爱layui"
-		  ,"fStartdate":"132"
-		  ,"fEnddate":'123'
-		});*/
-		  
 	});
 	
 	
