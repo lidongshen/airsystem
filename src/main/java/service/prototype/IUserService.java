@@ -3,8 +3,10 @@ package service.prototype;
 import java.util.List;
 
 import entity.Flight;
+import entity.User;
 
 public interface IUserService {
+	User findUser(String username);
 	// 订票
 	void orderTicket(int uId, int fId);
 

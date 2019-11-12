@@ -2,7 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-
+<% session.setAttribute("uId", request.getAttribute("uId")); 
+	out.print(session.getAttribute("uId"));
+%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -60,5 +62,6 @@
         </form>
     </div>
     </div>
+    
 </body>
 </html>

@@ -66,6 +66,9 @@ public class UserDaoSpringImpl implements IUserDao{
 		jdbcTemplate.update(
 				"update trip set u_ispay=1 where u_id=? and f_id=?",
 				new Object[]{uId,fId});
+		jdbcTemplate.update(
+				"update trip set b_ispay=1 where u_id=? and f_id=?",
+				new Object[]{uId,fId});
 	}
 
 	@Override
@@ -132,6 +135,13 @@ public class UserDaoSpringImpl implements IUserDao{
 	@Override
 	public void saveOrUpdateOutTicket(int uId, int fId, int oIsout) {
 		
+	}
+	@Override
+	public User findUser(String name) {
+		return jdbcTemplate.queryForObject(
+				"select * from user where u_phone = ?",
+				new Object[]{name},
+				new BeanPropertyRowMapper<User>(User.class));
 	}
 	
 	
