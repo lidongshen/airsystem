@@ -114,7 +114,12 @@
 	    <artifactId>fastjson</artifactId>
 	    <version>1.2.58</version>
 	</dependency>
-	
+	  <!--lombok-->
+	  <dependency>
+		  <groupId>org.projectlombok</groupId>
+		  <artifactId>lombok</artifactId>
+		  <version>1.16.20</version>
+	  </dependency>
   </dependencies>
   
   <!-- 构建插件 -->
@@ -139,7 +144,6 @@
   			<configuration>
   				<port>8080</port>
   				<path>/airsys</path>
-  				<uriEncoding>UTF-8</uriEncoding>
   				<!-- 实现热部署，不需要每次修改代码后都重新启动tomcat -->
   				<contextReloadable>true</contextReloadable>
   			</configuration>

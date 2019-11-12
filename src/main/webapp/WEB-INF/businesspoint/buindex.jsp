@@ -20,7 +20,7 @@
 </style>
 </head>
 <body style="padding: 0 15px; box-sizing: border-box;">
-	<table id="demo" class="layui-hide" lay-filter="flight"></table>
+	<table id="demo" class="layui-hide" lay-filter="bu"></table>
 	<script src="/airsys/assets/layui/layui.js"></script>
 	<script type="text/html" id="toolbarDemo">
 		<div class="layui-inline" lay-event="add">
