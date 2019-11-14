@@ -6,7 +6,9 @@
 .metadata
 .DS_Store
 .testBoss
-.properties
+*.properties
+pom.xml
+
 # java
 *.class
 
